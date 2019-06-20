@@ -1,0 +1,21 @@
+.canvas-field {
+  border: solid 1px;
+}
+
+
+.canvas-field__canvas {
+
+  width: 640px;
+  height: 640px;
+  image-rendering: pixelated;
+  filter: saturate(30%);
+}
+
+.canvas-field__canvasTamporary {
+  position: absolute;
+
+  width: 640px;
+  height: 640px;
+  image-rendering: pixelated;
+  filter: saturate(30%);
+}
