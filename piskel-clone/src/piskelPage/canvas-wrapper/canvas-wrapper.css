@@ -1,0 +1,9 @@
+.canvas-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  grid-area: canvas-wrapper;
+
+  background-color: #B1BAB1;
+}

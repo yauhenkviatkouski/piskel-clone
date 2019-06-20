@@ -5,7 +5,6 @@ module.exports = {
   entry: './src/index.js',
   output: {
     filename: 'app.bundle.js',
-    title: 'Piskel-clone',
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'source-map',
@@ -25,5 +24,7 @@ module.exports = {
       },
     ],
   },
-  plugins: [new HtmlWebpackPlugin()],
+  plugins: [new HtmlWebpackPlugin({
+    title: 'Piskel-clone',
+  })],
 };

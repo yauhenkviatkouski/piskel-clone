@@ -1,0 +1,14 @@
+body {
+  background-color: #D5DCD4;
+  padding: 10px;
+
+  display: grid;
+  grid-template-areas:
+  "header header header header"
+  "tools canvas-wrapper frames control-panel";
+  grid-template-rows: 50px 1fr;
+  grid-template-columns: 8%  1fr 12% 15%;
+  grid-gap: 10px;
+  min-height: 97vh;
+  margin: 0;
+}
