@@ -7,8 +7,59 @@ export function createElement(tag, className, id) {
   return element;
 }
 
-export function brezenhamLine() {
-  return 'arrayPoints';
+export function brezenhamLine(x0, y0, x1, y1) {
+  const arrayPoints = [];
+  let x; let y; let xe; let ye;
+  const deltaX = x1 - x0;
+  const deltaY = y1 - y0;
+  const deltaXpositive = Math.abs(deltaX);
+  const deltaYpositive = Math.abs(deltaY);
+  let xErr = 2 * deltaYpositive - deltaXpositive;
+  let yErr = 2 * deltaXpositive - deltaYpositive;
+  if (deltaYpositive <= deltaXpositive) {
+    if (deltaX >= 0) {
+      x = x0; y = y0; xe = x1;
+    } else {
+      x = x1; y = y1; xe = x0;
+    }
+    arrayPoints.push([x, y]);
+    for (let i = 0; x < xe; i += 1) {
+      x += 1;
+      if (xErr < 0) {
+        xErr += 2 * deltaYpositive;
+      } else {
+        if ((deltaX < 0 && deltaY < 0) || (deltaX > 0 && deltaY > 0)) {
+          y += 1;
+        } else {
+          y -= 1;
+        }
+        xErr += 2 * (deltaYpositive - deltaXpositive);
+      }
+      arrayPoints.push([x, y]);
+    }
+  } else {
+    if (deltaY >= 0) {
+      x = x0; y = y0; ye = y1;
+    } else {
+      x = x1; y = y1; ye = y0;
+    }
+    arrayPoints.push([x, y]);
+    for (let i = 0; y < ye; i += 1) {
+      y += 1;
+      if (yErr <= 0) {
+        yErr += 2 * deltaXpositive;
+      } else {
+        if ((deltaX < 0 && deltaY < 0) || (deltaX > 0 && deltaY > 0)) {
+          x += 1;
+        } else {
+          x -= 1;
+        }
+        yErr += 2 * (deltaXpositive - deltaYpositive);
+      }
+      arrayPoints.push([x, y]);
+    }
+  }
+  return arrayPoints;
 }
 
 // brezenhamLine(1,1,11,5);
