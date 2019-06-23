@@ -1,9 +1,9 @@
-.canvas-wrapper {
+.canvas-block {
   display: flex;
   justify-content: center;
   align-items: center;
 
-  grid-area: canvas-wrapper;
+  grid-area: canvas-block;
 
   background-color: #B1BAB1;
 }

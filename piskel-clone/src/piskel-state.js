@@ -1,10 +1,11 @@
 export default window.state = {
-  canvasSize: '128',
+  canvasSize: 128,
   handlerMove: 'pen',
   handlerClick: 'bucket',
-  canvasColor1: '',
-  canvasColor2: '',
-  currentFrame: 1,
-  carrentLayer: 1,
+  allCanvases: [],
+  currentCanvas: 0,
+  toolsColor1: '',
+  toolsColor2: '',
+  currentLayer: 1,
   framesPerSecond: 5,
 };

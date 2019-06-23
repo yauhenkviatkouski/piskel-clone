@@ -3,19 +3,17 @@
 }
 
 
-.canvas-field__canvas {
+.canvas-field canvas {
 
   width: 640px;
   height: 640px;
   image-rendering: pixelated;
-  filter: saturate(30%);
 }
 
-.canvas-field__canvasTamporary {
+.canvas-field__canvasTemporary {
   position: absolute;
 
   width: 640px;
   height: 640px;
   image-rendering: pixelated;
-  filter: saturate(30%);
 }

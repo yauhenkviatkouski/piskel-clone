@@ -1,9 +1,18 @@
+import state from '../piskel-state';
+
 export function createElement(tag, className, id) {
   const element = document.createElement(`${tag}`);
   if (id) {
     element.id = id;
   }
-  element.className = className;
+  if (className) {
+    element.className = className;
+  }
+  if (tag === 'canvas') {
+    element.width = state.canvasSize;
+    element.height = element.width;
+    element.getContext('2d');
+  }
   return element;
 }
 
