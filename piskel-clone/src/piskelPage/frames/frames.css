@@ -1,4 +1,13 @@
 .frames {
   background-color: #B1BAB1;
   grid-area: frames;
+  overflow: auto;
+}
+
+.frame-wrapper {
+  border: 2px solid #EAEDE4;
+}
+
+.frame-wrapper:hover {
+  border: 2px dashed #EAEDE4;
 }

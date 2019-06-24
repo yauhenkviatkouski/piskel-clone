@@ -1,0 +1,8 @@
+.button_frame-move {
+  background-color: red;
+  background-image: url( './frame-move.png' );
+}
+
+.button_frame-move:hover {
+  cursor: move;
+}

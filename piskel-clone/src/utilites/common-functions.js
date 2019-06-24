@@ -1,10 +1,7 @@
 import state from '../piskel-state';
 
-export function createElement(tag, className, id) {
+export function createElement(tag, className) {
   const element = document.createElement(`${tag}`);
-  if (id) {
-    element.id = id;
-  }
   if (className) {
     element.className = className;
   }
