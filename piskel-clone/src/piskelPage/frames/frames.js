@@ -3,6 +3,10 @@ import { createElement } from '../../utilites/common-functions';
 import frameAdd from './add/frame-add';
 import './move/frame-move.css';
 
+function markCurrentFrame() {
+  document.querySelector('.frames').children[window.state.currentCanvas].style.border = 'solid 4px #3D7939';
+}
+
 export function drawFrame(canvas) {
   const frameWrapper = createElement('div', 'frame-wrapper');
   frameWrapper.innerHTML = '<button class="button button_frame-move"></button><button class="button button_frame-copy"></button><button class="button button_frame-delete"></button>';
@@ -13,16 +17,13 @@ export function drawFrame(canvas) {
 }
 
 export function drawAllFrames() {
-  document.querySelectorAll('.frameWrapper').forEach((frameWrapper) => {
+  document.querySelectorAll('.frame-wrapper').forEach((frameWrapper) => {
     frameWrapper.remove();
   });
   window.state.allCanvases.forEach((canvas) => {
     document.querySelector('.button_frame-add').insertAdjacentElement('beforebegin', drawFrame(canvas));
   });
-}
-
-function markCurrentFrame() {
-  document.querySelector('.frames').children[window.state.currentCanvas].style.border = 'solid 2px #3D7939';
+  markCurrentFrame();
 }
 
 function changeCurrentFrame() {
@@ -32,6 +33,9 @@ function changeCurrentFrame() {
       const newCrurrentFrame = e.path[1];
       const indexNewCurentFrame = Array.prototype.indexOf.call(document.querySelector('.frames').children, newCrurrentFrame);
       window.state.currentCanvas = indexNewCurentFrame;
+      document.querySelector('.canvas-field').lastChild.remove();
+      document.querySelector('.canvas-field').insertAdjacentElement('beforeend', window.state.allCanvases[indexNewCurentFrame]);
+      drawAllFrames();
       markCurrentFrame();
     }
   });
