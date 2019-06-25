@@ -2,6 +2,7 @@ import './frames.css';
 import { createElement } from '../../utilites/common-functions';
 import frameAdd from './add/frame-add';
 import frameCopy from './copy/frame-copy';
+import frameDelete from './delete/frame-delete';
 
 function markCurrentFrame() {
   document.querySelector('.frames').children[window.state.currentCanvas].style.border = 'solid 4px #3D7939';
@@ -35,8 +36,6 @@ function changeCurrentFrame() {
       window.state.currentCanvas = indexNewCurentFrame;
       document.querySelector('.canvas-field').lastChild.remove();
       document.querySelector('.canvas-field').insertAdjacentElement('beforeend', window.state.allCanvases[indexNewCurentFrame]);
-      // e.target.getContext('2d').drawImage(window.state.allCanvases[indexNewCurentFrame]);
-      // drawAllFrames();
       markCurrentFrame();
     }
   });
@@ -49,6 +48,7 @@ export function frames() {
   frameAdd();
   changeCurrentFrame();
   frameCopy();
+  frameDelete();
 }
 
 // export function redrawCurrentFrame() {
