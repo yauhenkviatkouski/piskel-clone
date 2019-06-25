@@ -45,7 +45,6 @@ export function frames() {
   document.body.insertAdjacentElement('beforeend', createElement('div', 'frames'));
   document.querySelector('.frames').insertAdjacentElement('beforeend', createElement('button', 'button button_frame-add'));
   drawAllFrames();
-  markCurrentFrame();
   frameAdd();
   changeCurrentFrame();
 }

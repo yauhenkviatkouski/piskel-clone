@@ -1,4 +1,4 @@
 .button_frame-add {
-  background-color: red;
   background-image: url( './frame-add.png' );
+  width: 100%;
 }

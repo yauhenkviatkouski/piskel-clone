@@ -1,6 +1,6 @@
 .button_frame-move {
-  background-color: red;
   background-image: url( './frame-move.png' );
+  background-color: #3D7939;
 }
 
 .button_frame-move:hover {
