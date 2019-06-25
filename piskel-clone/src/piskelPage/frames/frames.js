@@ -1,7 +1,7 @@
 import './frames.css';
 import { createElement } from '../../utilites/common-functions';
 import frameAdd from './add/frame-add';
-import './move/frame-move.css';
+import frameCopy from './copy/frame-copy';
 
 function markCurrentFrame() {
   document.querySelector('.frames').children[window.state.currentCanvas].style.border = 'solid 4px #3D7939';
@@ -27,15 +27,16 @@ export function drawAllFrames() {
 }
 
 function changeCurrentFrame() {
-  document.querySelector('.frames').addEventListener('click', (e) => {
-    if (e.target.tagName === 'CANVAS') {
+  document.querySelector('.frames').addEventListener('click', (event) => {
+    if (event.target.tagName === 'CANVAS') {
       document.querySelector('.frames').children[window.state.currentCanvas].style.border = '';
-      const newCrurrentFrame = e.path[1];
+      const newCrurrentFrame = event.path[1];
       const indexNewCurentFrame = Array.prototype.indexOf.call(document.querySelector('.frames').children, newCrurrentFrame);
       window.state.currentCanvas = indexNewCurentFrame;
       document.querySelector('.canvas-field').lastChild.remove();
       document.querySelector('.canvas-field').insertAdjacentElement('beforeend', window.state.allCanvases[indexNewCurentFrame]);
-      drawAllFrames();
+      // e.target.getContext('2d').drawImage(window.state.allCanvases[indexNewCurentFrame]);
+      // drawAllFrames();
       markCurrentFrame();
     }
   });
@@ -47,6 +48,7 @@ export function frames() {
   drawAllFrames();
   frameAdd();
   changeCurrentFrame();
+  frameCopy();
 }
 
 // export function redrawCurrentFrame() {

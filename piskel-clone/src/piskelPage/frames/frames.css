@@ -1,7 +1,7 @@
 .frames {
   background-color: #B1BAB1;
   grid-area: frames;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .frame-wrapper {
