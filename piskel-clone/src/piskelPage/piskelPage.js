@@ -12,6 +12,6 @@ export default function piskelPage() {
   header();
   tools();
   canvasBlock();
-  controlPanel();
   frames();
+  controlPanel();
 }

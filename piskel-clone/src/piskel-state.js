@@ -7,5 +7,5 @@ export default window.state = {
   toolsColor1: '',
   toolsColor2: '',
   currentLayer: 1,
-  framesPerSecond: 5,
+  fps: 1,
 };

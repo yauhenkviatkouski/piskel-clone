@@ -1,0 +1,37 @@
+.preview {
+  width: 100%;
+}
+
+.control-panel canvas {
+  height: 100%;
+  width: 100%;
+}
+
+.control-panel h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #3D7939;
+  margin: 2px auto;
+}
+
+.fps-bar {
+  margin: 10px;
+  border: 2px solid #EAEDE4;
+  height: 2px;
+  width: calc(100% - 4px);
+}
+
+.fps-bar__slider {
+  position: relative;
+  margin-top: -14px;
+  background-color: #3D7939;
+  height: 30px;
+  width: 7%;
+  left: 0%;
+}
+
+.button_full-screen {
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 7px;
+  color: #EAEDE4;
+  width: 90px;
+}
