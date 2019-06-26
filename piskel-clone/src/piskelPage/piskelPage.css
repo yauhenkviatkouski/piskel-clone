@@ -25,3 +25,8 @@ button {
   background-position: 50% 50%;
   background-color: #3D7939;
 }
+
+canvas {
+  background-image: url('../utilites/common-background.png');
+  background-color:rgba(0, 0, 0, 1);
+}

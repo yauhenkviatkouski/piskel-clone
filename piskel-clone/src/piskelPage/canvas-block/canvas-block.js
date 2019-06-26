@@ -20,6 +20,6 @@ export default function canvasBlock() {
   canvasTemporary.width = window.state.canvasSize;
   canvasTemporary.height = canvasTemporary.width;
   document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', canvasTemporary); // временный канвас  вставляется в канвас-поле  (в начало)
-  document.querySelector('.canvas-field').insertAdjacentElement('beforeend', window.state.allCanvases[window.state.currentCanvas]);
+  document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', window.state.allCanvases[window.state.currentCanvas]);
   canvasHandler();
 }
