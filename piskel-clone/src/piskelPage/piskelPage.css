@@ -31,4 +31,5 @@ button {
 canvas {
   background-image: url('../utilites/common-background.png');
   background-color:rgba(0, 0, 0, 1);
+  image-rendering: pixelated;
 }

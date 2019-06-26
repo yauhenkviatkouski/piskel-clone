@@ -24,6 +24,12 @@ function frameControl() {
   });
 }
 
+function fullScreen() {
+  document.querySelector('.button_full-screen').addEventListener('click', () => {
+    document.querySelector('.preview canvas').requestFullscreen();
+  });
+}
+
 export default function preview() {
   // document.querySelector('.control-panel').insertAdjacentElement('afterbegin', createElement('div', 'preview-wrapper'));
   // document.querySelector('.preview-wrapper').insertAdjacentElement('afterbegin', createElement('div', 'preview-wrapper'));
@@ -32,4 +38,5 @@ export default function preview() {
   document.querySelector('.preview').insertAdjacentElement('afterbegin', createElement('canvas'));
   drawPreviewCanvas();
   frameControl();
+  fullScreen();
 }
