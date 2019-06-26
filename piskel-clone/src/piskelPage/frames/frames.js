@@ -10,8 +10,8 @@ function markCurrentFrame() {
 }
 
 function redrawCurrentCanvas() {
-  document.querySelector('.canvas-field').lastChild.remove();
-  document.querySelector('.canvas-field').insertAdjacentElement('beforeend', window.state.allCanvases[window.state.currentCanvas]);
+  document.querySelector('.canvas-field').firstChild.remove();
+  document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', window.state.allCanvases[window.state.currentCanvas]);
 }
 
 export function drawFrame(canvas) {
@@ -88,7 +88,7 @@ function frameDelete() {
         redrawCurrentCanvas();
         markCurrentFrame();
       } else {
-        const canvasOnField = document.querySelector('.canvas-field').lastChild;
+        const canvasOnField = document.querySelector('.canvas-field').firstChild;
         canvasOnField.getContext('2d').clearRect(0, 0, window.state.canvasSize, window.state.canvasSize);
         const canvasOnFirstFrame = document.querySelector('.frame-wrapper').lastChild;
         canvasOnFirstFrame.getContext('2d').clearRect(0, 0, window.state.canvasSize, window.state.canvasSize);

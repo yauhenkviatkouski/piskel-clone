@@ -1,25 +1,38 @@
 .preview {
-  width: 100%;
+  width: 99%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 2px solid #EAEDE4;
 }
 
 .control-panel canvas {
-  height: 100%;
   width: 100%;
 }
 
 .control-panel h4 {
+  display: inline-block;
+  position: relative;
   font-family: Arial, Helvetica, sans-serif;
   color: #3D7939;
-  margin: 2px auto;
+  margin: 4px 10px;
+  top: 1px;
+}
+
+.control-panel h4 span {
+  display: inline-block;
+  width: 20px;
 }
 
 .control-panel input {
- width: 40%;
+
+  width: 40%;
 }
 
 .button_full-screen {
   font-family: Arial, Helvetica, sans-serif;
-  margin-top: 7px;
+  margin: 2px;
   color: #EAEDE4;
-  width: 90px;
+  width: 90%;
 }

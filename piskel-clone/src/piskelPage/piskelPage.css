@@ -13,6 +13,8 @@ body {
   grid-gap: 10px;
 
   height: 99vh;
+  width: 98%;
+  margin-left: 1%;
 }
 
 button {
