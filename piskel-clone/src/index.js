@@ -16,7 +16,7 @@ if (sessionStorage.getItem('localState')) {
     currentCanvas: 0,
     color1: 'yellow',
     color2: '',
-    currentLayer: 1,
+    handlerId: 'pen',
     fps: 1,
   };
   window.state.allCanvases.push(createElement('canvas'));

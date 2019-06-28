@@ -1,4 +1,4 @@
-export function createElement(tag, className) {
+export function createElement(tag, className, id) {
   const element = document.createElement(`${tag}`);
   if (className) {
     element.className = className;
@@ -7,6 +7,9 @@ export function createElement(tag, className) {
     element.width = window.state.canvasSize;
     element.height = element.width;
     element.getContext('2d');
+  }
+  if (id) {
+    element.id = id;
   }
   return element;
 }
