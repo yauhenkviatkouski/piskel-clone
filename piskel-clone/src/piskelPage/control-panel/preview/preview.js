@@ -15,7 +15,7 @@ function drawPreviewCanvas() {
   setTimeout(drawPreviewCanvas, milliseconds);
 }
 
-function frameControl() {
+function fpsControl() {
   document.querySelector('.control-panel input').addEventListener('input', (input) => {
     const newValue = Number(input.srcElement.value);
     window.state.fps = newValue;
@@ -30,9 +30,11 @@ function fullScreen() {
 }
 
 export default function preview() {
-  document.querySelector('.control-panel').innerHTML = '<div class="preview"><h4>FPS: <span class="fps-value">1</span></h4><input type="range" name="fps" min="1" max="25" value="1"><button class="button_full-screen">Full screen</button></div>';
+  document.querySelector('.control-panel').innerHTML = '<div class="preview"><h4>FPS: <span class="fps-value"></span></h4><input type="range" name="fps" min="1" max="25"><button class="button_full-screen">Full screen</button></div>';
+  document.querySelector('.preview input').setAttribute('value', window.state.fps);
   document.querySelector('.preview').insertAdjacentElement('afterbegin', createElement('canvas'));
+  document.querySelector('.preview span').textContent = window.state.fps;
   drawPreviewCanvas();
-  frameControl();
+  fpsControl();
   fullScreen();
 }
