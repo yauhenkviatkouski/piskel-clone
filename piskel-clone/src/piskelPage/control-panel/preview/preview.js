@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 import './preview.css';
 import { createElement } from '../../../utilites/common-functions';
 
@@ -31,9 +30,6 @@ function fullScreen() {
 }
 
 export default function preview() {
-  // document.querySelector('.control-panel').insertAdjacentElement('afterbegin', createElement('div', 'preview-wrapper'));
-  // document.querySelector('.preview-wrapper').insertAdjacentElement('afterbegin', createElement('div', 'preview-wrapper'));
-
   document.querySelector('.control-panel').innerHTML = '<div class="preview"><h4>FPS: <span class="fps-value">1</span></h4><input type="range" name="fps" min="1" max="25" value="1"><button class="button_full-screen">Full screen</button></div>';
   document.querySelector('.preview').insertAdjacentElement('afterbegin', createElement('canvas'));
   drawPreviewCanvas();

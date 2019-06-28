@@ -1,17 +1,35 @@
-import state from '../piskel-state';
-
 export function createElement(tag, className) {
   const element = document.createElement(`${tag}`);
   if (className) {
     element.className = className;
   }
   if (tag === 'canvas') {
-    element.width = state.canvasSize;
+    element.width = window.state.canvasSize;
     element.height = element.width;
     element.getContext('2d');
   }
   return element;
 }
+
+export function canvasesToData64() {
+  window.state.allCanvasesData64 = [];
+  window.state.allCanvases.forEach((canvas, index) => {
+    window.state.allCanvasesData64[index] = canvas.toDataURL();
+  });
+}
+
+export function canvasesFromData64() {
+  window.state.allCanvases = [];
+  window.state.allCanvasesData64.forEach((canvas64, index) => {
+    const img = new Image();
+    img.onload = () => {
+      window.state.allCanvases[index] = createElement('canvas');
+      window.state.allCanvases[index].getContext('2d').drawImage(img, 0, 0);
+    };
+    img.src = canvas64;
+  });
+}
+
 
 export function brezenhamLine(x0, y0, x1, y1) {
   const arrayPoints = [];

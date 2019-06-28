@@ -9,7 +9,7 @@ function markCurrentFrame() {
   document.querySelector('.frames').children[window.state.currentCanvas].style.border = 'solid 4px #3D7939';
 }
 
-function redrawCurrentCanvas() {
+export function redrawCurrentCanvas() {
   document.querySelector('.canvas-field').firstChild.remove();
   document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', window.state.allCanvases[window.state.currentCanvas]);
 }

@@ -1,5 +1,5 @@
-export default window.state = {
-  canvasSize: 128,
+window.state = {
+  canvasSize: 32,
   handlerMove: 'pen',
   handlerClick: 'bucket',
   allCanvases: [],

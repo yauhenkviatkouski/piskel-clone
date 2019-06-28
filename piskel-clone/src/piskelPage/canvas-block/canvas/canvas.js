@@ -1,10 +1,9 @@
 import './canvas.css';
 import { brezenhamLine } from '../../../utilites/common-functions';
-import state from '../../../piskel-state';
 
 export default function canvasHandler() {
   function devider() {
-    return 640 / state.canvasSize;
+    return 640 / window.state.canvasSize;
   }
   const canvasField = document.querySelector('.canvas-field');
   const canvasTemporary = document.querySelector('.canvas-field__canvasTemporary');
@@ -19,7 +18,7 @@ export default function canvasHandler() {
   });
   canvasField.addEventListener('mouseup', () => {
     isMouseDown = false;
-    state.allCanvases[window.state.currentCanvas].getContext('2d').drawImage(canvasTemporary, 0, 0);
+    window.state.allCanvases[window.state.currentCanvas].getContext('2d').drawImage(canvasTemporary, 0, 0);
     const currentFrame = document.querySelectorAll('.frame-wrapper')[window.state.currentCanvas].lastChild;
     currentFrame.getContext('2d').drawImage(canvasTemporary, 0, 0);
     ctxTemporary.clearRect(0, 0, canvasTemporary.width, canvasTemporary.height);
