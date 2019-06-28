@@ -1,6 +1,5 @@
 import './canvas-block.css';
 import { createElement } from '../../utilites/common-functions';
-import canvasHandler from './canvas/canvas';
 
 export default function canvasBlock() {
   document.querySelector('.tools').insertAdjacentElement('afterend', createElement('div', 'canvas-block'));
@@ -12,5 +11,10 @@ export default function canvasBlock() {
   canvasTemporary.height = canvasTemporary.width;
   document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', canvasTemporary);
   document.querySelector('.canvas-field').insertAdjacentElement('afterbegin', window.state.allCanvases[window.state.currentCanvas]);
-  canvasHandler();
+  canvasTemporary.addEventListener('mousedown', (mouseDown) => {
+    window.state.handlerMove(mouseDown);
+  });
+  canvasTemporary.addEventListener('click', (click) => {
+    window.state.handlerMove(click);
+  });
 }

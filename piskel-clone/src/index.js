@@ -9,13 +9,13 @@ if (sessionStorage.getItem('localState')) {
 } else {
   window.state = {
     canvasSize: 32,
-    handlerMove: 'pen',
-    handlerClick: 'bucket',
+    handlerMove: {},
+    handlerClick: {},
     allCanvases: [],
     allCanvasesData64: [],
     currentCanvas: 0,
-    toolsColor1: '',
-    toolsColor2: '',
+    color1: 'yellow',
+    color2: '',
     currentLayer: 1,
     fps: 1,
   };
