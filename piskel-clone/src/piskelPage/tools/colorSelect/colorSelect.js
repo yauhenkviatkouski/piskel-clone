@@ -15,7 +15,7 @@ export default function colorSelect() {
   inputPrimary.addEventListener('input', (colorPrimary) => {
     window.state.color1 = colorPrimary.srcElement.value;
   });
-  inputPrimary.addEventListener('input', (colorSecondary) => {
+  inputSecondary.addEventListener('input', (colorSecondary) => {
     window.state.color2 = colorSecondary.srcElement.value;
   });
 }
