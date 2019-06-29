@@ -7,7 +7,7 @@ export default function colorSelect() {
   const inputSecondary = createElement('input', 'color-secondary');
   colorBlock.insertAdjacentElement('afterbegin', inputSecondary);
   inputSecondary.type = 'color';
-  inputSecondary.value = 'black';
+  inputSecondary.value = '#ffffff';
   const inputPrimary = createElement('input', 'color-primary');
   colorBlock.insertAdjacentElement('beforeend', inputPrimary);
   inputPrimary.type = 'color';

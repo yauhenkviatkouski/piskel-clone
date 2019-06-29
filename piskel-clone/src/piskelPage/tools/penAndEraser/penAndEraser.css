@@ -1,11 +1,11 @@
 .button_pen {
   background-image: url( './tool-pen.png' );
   min-width: 35px;
-  width: 40%;
+  width: 45%;
 }
 
 .button_eraser {
   background-image: url( './tool-eraser.png' );
   min-width: 35px;
-  width: 40%;
+  width: 45%;
 }

@@ -17,4 +17,7 @@ export default function canvasBlock() {
   canvasTemporary.addEventListener('click', (click) => {
     window.state.handlerMove(click);
   });
+  canvasTemporary.addEventListener('contextmenu', (contextmenu) => {
+    contextmenu.preventDefault();
+  });
 }
