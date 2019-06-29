@@ -1,0 +1,21 @@
+.color-block {
+  margin-top: 20px;
+  padding: 10px;
+  width: 100%;
+  position: relative;
+}
+
+.tools input {
+  width: 50%;
+  height: 25px;
+}
+
+.color-secondary {
+  position: absolute;
+  left: 35%;
+  top: 25px;
+}
+
+.color-primary {
+  position: absolute;
+}
