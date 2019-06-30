@@ -14,9 +14,9 @@ export default function canvasBlock() {
   canvasTemporary.addEventListener('mousedown', (mouseDown) => {
     window.state.handlerMove(mouseDown);
   });
-  canvasTemporary.addEventListener('click', (click) => {
-    window.state.handlerMove(click);
-  });
+  // canvasTemporary.addEventListener('click', (click) => {
+  //   window.state.handlerClick(click);
+  // });
   canvasTemporary.addEventListener('contextmenu', (contextmenu) => {
     contextmenu.preventDefault();
   });

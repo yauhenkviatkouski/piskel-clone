@@ -6,7 +6,7 @@ export default function eraserButton() {
   document.querySelector('.tools').insertAdjacentElement('beforeend', buttonEraser);
   buttonEraser.addEventListener('click', () => {
     document.getElementById(`${window.state.handlerId}`).style.border = '';
-    document.querySelector('.button_eraser').style.border = 'white 2px solid';
+    document.querySelector('.button_eraser').style.border = 'white 2px dashed';
     window.state.handlerMove = penAndEraser;
     window.state.handlerId = 'eraser';
   });
