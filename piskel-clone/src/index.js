@@ -8,7 +8,7 @@ if (sessionStorage.getItem('localState')) {
   canvasesFromData64();
 } else {
   window.state = {
-    canvasSize: 32,
+    canvasSize: 8,
     handlerMove: {},
     handlerClick: {},
     allCanvases: [],
