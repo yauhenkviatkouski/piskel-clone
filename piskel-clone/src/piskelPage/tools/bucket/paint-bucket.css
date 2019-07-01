@@ -2,4 +2,5 @@
   background-image: url( './tool-bucket.png' );
   min-width: 35px;
   width: 45%;
+  order: 3;
 }

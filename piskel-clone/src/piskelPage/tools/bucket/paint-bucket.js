@@ -26,7 +26,15 @@ function isInsideCanvas(x, y) {
   return result;
 }
 
-function bucket(pointsArray) {
+function getStateColor(click) {
+  global.console.log(click);
+  let result;
+  if (click.which === 1) result = window.state.color1;
+  if (click.which === 3) result = window.state.color2;
+  return result;
+}
+
+function bucket(pointsArray, click) {
   function isInArray(x0, y0) {
     const result = pointsArray.some(point => (point[0] === x0 && point[1] === y0));
     return result;
@@ -46,8 +54,8 @@ function bucket(pointsArray) {
     let reachLeft = false;
     let reachRight = false;
     while (isInsideCanvas(x, y) && colorOfPoint(x, y) === colorStartPoint) {
-      ctxCanvas.fillStyle = window.state.color1;
-      ctxCurrentFrame.fillStyle = window.state.color1;
+      ctxCanvas.fillStyle = getStateColor(click);
+      ctxCurrentFrame.fillStyle = getStateColor(click);
       ctxCanvas.fillRect(x, y, 1, 1);
       ctxCurrentFrame.fillRect(x, y, 1, 1);
       if (isInsideCanvas(x - 1, y) && colorOfPoint(x - 1, y) === colorStartPoint) {
@@ -76,18 +84,18 @@ function bucket(pointsArray) {
 }
 
 export function paintBucket(click) {
-  global.console.log('bucket');
+  global.console.log('12314234234234234');
   const devider = 640 / window.state.canvasSize;
   const clickX = Math.floor(click.offsetX / devider);
   const clickY = Math.floor(click.offsetY / devider);
   const canvas = document.querySelector('.canvas-field').firstChild;
   const rgbaArr = canvas.getContext('2d').getImageData(clickX, clickY, 1, 1).data;
   if (rgbaArr.join() === '0,0,0,0') {
-    bucket([[clickX, clickY]]);
+    bucket([[clickX, clickY]], click);
     return;
   }
-  if (rgbToHex(rgbaArr[0], rgbaArr[1], rgbaArr[2]) === window.state.color1) return;
-  bucket([[clickX, clickY]]);
+  if (rgbToHex(rgbaArr[0], rgbaArr[1], rgbaArr[2]) === getStateColor(click)) return;
+  bucket([[clickX, clickY]], click);
 }
 
 export function bucketButton() {

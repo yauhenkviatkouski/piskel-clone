@@ -4,6 +4,7 @@
   padding-left: 15px;
   width: 100%;
   position: relative;
+  order: 30;
 }
 
 .tools input {

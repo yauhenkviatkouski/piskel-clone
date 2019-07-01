@@ -7,8 +7,8 @@ import { bucketButton } from './bucket/paint-bucket';
 
 export default function tools() {
   document.body.insertAdjacentElement('beforeend', createElement('div', 'tools'));
-  penButton();
   eraserButton();
   bucketButton();
   colorSelect();
+  penButton();
 }

@@ -2,10 +2,12 @@
   background-image: url( './tool-pen.png' );
   min-width: 35px;
   width: 45%;
+  order: 1;
 }
 
 .button_eraser {
   background-image: url( './tool-eraser.png' );
   min-width: 35px;
   width: 45%;
+  order: 2;
 }

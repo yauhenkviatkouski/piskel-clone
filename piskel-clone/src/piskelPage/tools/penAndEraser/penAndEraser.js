@@ -7,8 +7,6 @@ export const penAndEraser = function pen(mouseEvent) {
   const devider = 640 / window.state.canvasSize;
   const canvasTemporary = document.querySelector('.canvas-field__canvasTemporary');
   const ctxTemporary = canvasTemporary.getContext('2d');
-
-
   const clickX = Math.floor(mouseEvent.offsetX / devider);
   const clickY = Math.floor(mouseEvent.offsetY / devider);
   if (mouseEvent.which === 3) {
@@ -67,13 +65,13 @@ export function penButton() {
   const buttonPen = createElement('button', 'button button_pen', 'pen');
   document.querySelector('.tools').insertAdjacentElement('beforeend', buttonPen);
   window.state.handlerMove = penAndEraser;
-  // window.state.handlerClick = penAndEraser;
+  document.getElementById(`${window.state.handlerId}`).style.border = '';
   document.querySelector('.button_pen').style.border = 'white 2px dashed';
+  window.state.handlerId = 'pen';
   buttonPen.addEventListener('click', () => {
     document.getElementById(`${window.state.handlerId}`).style.border = '';
     document.querySelector('.button_pen').style.border = 'white 2px dashed';
     window.state.handlerMove = penAndEraser;
-    // window.state.handlerClick = penAndEraser;
     window.state.handlerId = 'pen';
   });
 }
