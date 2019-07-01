@@ -12,6 +12,7 @@
 }
 
 .control-panel h4 {
+  width: 100%;
   display: inline-block;
   position: relative;
   font-family: Arial, Helvetica, sans-serif;

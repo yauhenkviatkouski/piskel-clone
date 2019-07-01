@@ -35,12 +35,11 @@ function bucket(pointsArray) {
   const ctxCanvas = canvas.getContext('2d');
   const currentFrame = document.querySelectorAll('.frame-wrapper')[window.state.currentCanvas].lastChild;
   const ctxCurrentFrame = currentFrame.getContext('2d');
+  const colorStartPoint = colorOfPoint(pointsArray[0][0], pointsArray[0][1]);
   while (pointsArray.length) {
-    if (pointsArray.length > 10) return;
     const cursorPoint = pointsArray.shift();
     const x = cursorPoint[0];
     let y = cursorPoint[1];
-    const colorStartPoint = colorOfPoint(x, y);
     while (isInsideCanvas(x, y - 1) && colorOfPoint(x, y - 1) === colorStartPoint) {
       y -= 1;
     }
@@ -83,15 +82,12 @@ export function paintBucket(click) {
   const clickY = Math.floor(click.offsetY / devider);
   const canvas = document.querySelector('.canvas-field').firstChild;
   const rgbaArr = canvas.getContext('2d').getImageData(clickX, clickY, 1, 1).data;
-  function startbucket() {
-    if (rgbaArr.join() === '0,0,0,0') {
-      bucket([[clickX, clickY]]);
-      return;
-    }
-    if (rgbToHex(rgbaArr[0], rgbaArr[1], rgbaArr[2]) === window.state.color1) return;
+  if (rgbaArr.join() === '0,0,0,0') {
     bucket([[clickX, clickY]]);
+    return;
   }
-  setTimeout(startbucket, 0);
+  if (rgbToHex(rgbaArr[0], rgbaArr[1], rgbaArr[2]) === window.state.color1) return;
+  bucket([[clickX, clickY]]);
 }
 
 export function bucketButton() {
