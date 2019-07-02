@@ -2,6 +2,7 @@
 .link-for-save {
   display: inline-block;
   width: 100%;
+  margin: 2px;
 }
 
 .button_save-to-file {

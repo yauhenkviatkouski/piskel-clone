@@ -8,7 +8,7 @@ body {
   grid-template-areas:
   "header header header header"
   "tools canvas-block frames control-panel";
-  grid-template-rows: 5vh 1fr;
+  grid-template-rows: 30px 1fr;
   grid-template-columns: 8%  1fr 10% 15%;
   grid-gap: 10px;
 

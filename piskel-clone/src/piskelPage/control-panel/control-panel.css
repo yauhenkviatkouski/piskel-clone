@@ -7,3 +7,9 @@
   flex-direction: column;
   align-items: center;
 }
+
+.control-panel > button {
+  display: inline-block;
+  padding: 2px;
+  width: 100%;
+}
