@@ -27,7 +27,6 @@ function isInsideCanvas(x, y) {
 }
 
 function getStateColor(click) {
-  global.console.log(click);
   let result;
   if (click.which === 1) result = window.state.color1;
   if (click.which === 3) result = window.state.color2;
@@ -84,7 +83,6 @@ function bucket(pointsArray, click) {
 }
 
 export function paintBucket(click) {
-  global.console.log('12314234234234234');
   const devider = 640 / window.state.canvasSize;
   const clickX = Math.floor(click.offsetX / devider);
   const clickY = Math.floor(click.offsetY / devider);

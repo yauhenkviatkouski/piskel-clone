@@ -9,8 +9,8 @@
 
 .resize-wrapper button {
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 10px;
+  font-size: 12px;
   margin: 2px;
   color: #EAEDE4;
-  width: 28%;
+  min-width: 28%;
 }
