@@ -1,7 +1,7 @@
 import './header.css';
 import { createElement } from '../../utilites/common-functions';
 import loadFromLocal from './localStorage/localSorage';
-// import saveToFile from './saveFile/saveFile';
+import saveToFile from './saveFile/saveFile';
 
 
 export default function header() {
@@ -9,5 +9,5 @@ export default function header() {
   setTimeout(() => {
     loadFromLocal();
   }, 0);
-  // saveToFile();
+  saveToFile();
 }
