@@ -5,6 +5,7 @@ import resizeBlock from './resize-canvas/resize-canvas';
 import loadFromLocal from './localStorage/localSorage';
 import saveToFile from './saveFile/saveFile';
 import openFile from './open-file/openFile';
+import saveOnGif from './saveFile/gif/saveGif';
 
 
 export default function controlPanel() {
@@ -16,4 +17,5 @@ export default function controlPanel() {
   }, 0);
   saveToFile();
   openFile();
+  saveOnGif();
 }

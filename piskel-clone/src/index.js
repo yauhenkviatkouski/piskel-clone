@@ -14,8 +14,8 @@ if (sessionStorage.getItem('localState')) {
     allCanvases: [],
     allCanvasesData64: [],
     currentCanvas: 0,
-    color1: '#000000',
-    color2: '#ffffff',
+    color1: '#ffffff',
+    color2: '#000000',
     handlerId: 'pen',
     fps: 1,
   };
