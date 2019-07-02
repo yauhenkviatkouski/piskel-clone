@@ -5,10 +5,10 @@ import { createElement, canvasesFromData64 } from './utilites/common-functions';
 if (sessionStorage.getItem('localState')) {
   window.state = JSON.parse(sessionStorage.getItem('localState'));
   sessionStorage.clear();
-  canvasesFromData64();
+  window.state.allCanvases = canvasesFromData64();
 } else {
   window.state = {
-    canvasSize: 8,
+    canvasSize: 64,
     handlerMove: {},
     handlerClick: {},
     allCanvases: [],

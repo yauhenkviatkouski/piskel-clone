@@ -22,15 +22,16 @@ export function canvasesToData64() {
 }
 
 export function canvasesFromData64() {
-  window.state.allCanvases = [];
+  const canvases = [];
   window.state.allCanvasesData64.forEach((canvas64, index) => {
     const img = new Image();
     img.onload = () => {
-      window.state.allCanvases[index] = createElement('canvas');
-      window.state.allCanvases[index].getContext('2d').drawImage(img, 0, 0);
+      canvases[index] = createElement('canvas');
+      canvases[index].getContext('2d').drawImage(img, 0, 0);
     };
     img.src = canvas64;
   });
+  return canvases;
 }
 
 
