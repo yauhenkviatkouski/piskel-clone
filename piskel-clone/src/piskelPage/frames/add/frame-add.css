@@ -1,4 +1,4 @@
 .button_frame-add {
   background-image: url( './frame-add.png' );
-  width: 100%;
+  width: calc(100% - 4px);
 }

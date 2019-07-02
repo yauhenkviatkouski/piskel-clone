@@ -4,7 +4,7 @@ import { createElement, canvasesToData64 } from '../../../utilites/common-functi
 
 export default function saveToFile() {
   const linkForSave = createElement('a', 'link-for-save');
-  document.querySelector('header').insertAdjacentElement('afterbegin', linkForSave);
+  document.querySelector('.control-panel').insertAdjacentElement('beforeend', linkForSave);
   const buttonSave = createElement('button', 'button button_save-to-file');
   buttonSave.textContent = 'Save to file';
   linkForSave.insertAdjacentElement('afterbegin', buttonSave);

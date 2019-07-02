@@ -1,0 +1,11 @@
+
+.link-for-save {
+  display: inline-block;
+  width: 100%;
+}
+
+.button_save-to-file {
+  display: inline-block;
+  width: 100%;
+  margin: 0;
+}

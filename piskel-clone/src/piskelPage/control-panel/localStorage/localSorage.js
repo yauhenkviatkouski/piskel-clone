@@ -12,7 +12,7 @@ function saveOnLocalAuto() {
 export default function loadFromLocal() {
   const buttonLoadLocal = createElement('button', 'button button_load-from-local');
   buttonLoadLocal.textContent = 'Load latest Sprite';
-  document.querySelector('header').insertAdjacentElement('afterbegin', buttonLoadLocal);
+  document.querySelector('.control-panel').insertAdjacentElement('beforeend', buttonLoadLocal);
   document.querySelector('.canvas-field__canvasTemporary').addEventListener('mousedown', () => {
     saveOnLocalAuto();
   }, { once: true });
