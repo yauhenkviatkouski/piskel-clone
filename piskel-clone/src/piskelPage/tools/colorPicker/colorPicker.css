@@ -1,0 +1,6 @@
+.button_colorpicker {
+  background-image: url( './tool-colorpicker.png' );
+  min-width: 35px;
+  width: 45%;
+  order: 6;
+}
