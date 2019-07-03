@@ -13,4 +13,8 @@ export default function coordinatesBlock() {
     document.querySelector('.pointX').textContent = `Point X: ${pointX + 1}`;
     document.querySelector('.pointY').textContent = `Point Y: ${pointY + 1}`;
   });
+  document.querySelector('.canvas-field').addEventListener('mouseleave', () => {
+    document.querySelector('.pointX').textContent = 'Point X';
+    document.querySelector('.pointY').textContent = 'Point Y';
+  });
 }

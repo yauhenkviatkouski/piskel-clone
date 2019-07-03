@@ -5,6 +5,7 @@ import eraserButton from './penAndEraser/eraser';
 import colorSelect from './colorSelect/colorSelect';
 import { bucketButton } from './bucket/paint-bucket';
 import coordinates from './coordinates/coordinates';
+import { strokeTool } from './stroke/stroke';
 
 export default function tools() {
   document.body.insertAdjacentElement('beforeend', createElement('div', 'tools'));
@@ -13,4 +14,5 @@ export default function tools() {
   colorSelect();
   penButton();
   setTimeout(coordinates, 0);
+  strokeTool();
 }

@@ -1,0 +1,6 @@
+.button_stroke {
+  background-image: url( './tool-stroke.png' );
+  min-width: 35px;
+  width: 45%;
+  order: 1;
+}
