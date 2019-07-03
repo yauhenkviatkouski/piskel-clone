@@ -1,3 +1,11 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable vars-on-top */
+/* eslint-disable camelcase */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-console */
+/* eslint-disable prefer-template */
+/* eslint-disable quotes */
+/* eslint-disable no-var */
 import './tools.css';
 import { createElement } from '../../utilites/common-functions';
 import { penButton } from './penAndEraser/penAndEraser';

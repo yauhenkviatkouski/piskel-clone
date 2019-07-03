@@ -36,5 +36,6 @@ module.exports = {
   },
   plugins: [new HtmlWebpackPlugin({
     title: 'Piskel-clone',
+    meta: { 'google-signin-client_id': '573742705762-5d1rsp9orkovk7qkk4q8vqrqbm3og1u0.apps.googleusercontent.com', 'google-signin-scope': 'profile email' },
   })],
 };

@@ -1,5 +1,4 @@
 /* eslint-disable no-undef */
-/* eslint-disable no-var */
 import { createElement } from '../../../../utilites/common-functions';
 import './LZWEncoder';
 import './NeuQuant';
@@ -12,7 +11,7 @@ export default function saveOnGif() {
   buttonGif.textContent = 'Save as .gif';
   document.querySelector('.control-panel').insertAdjacentElement('beforeend', buttonGif);
   buttonGif.addEventListener('click', () => {
-    var encoder = new GIFEncoder();
+    const encoder = new GIFEncoder();
     encoder.setRepeat(0);
     encoder.setDelay(1000 / window.state.fps);
     encoder.start();
@@ -20,6 +19,6 @@ export default function saveOnGif() {
       encoder.addFrame(canvas.getContext('2d'));
     });
     encoder.finish();
-    encoder.download('download.gif');
+    encoder.download('Sprite.gif');
   });
 }
