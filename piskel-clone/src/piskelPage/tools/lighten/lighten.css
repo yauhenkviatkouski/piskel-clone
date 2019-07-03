@@ -1,0 +1,6 @@
+.button_lighten {
+  background-image: url( './tool-lighten.png' );
+  min-width: 35px;
+  width: 45%;
+  order: 4;
+}
