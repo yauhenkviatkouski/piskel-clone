@@ -7,14 +7,16 @@ import { bucketButton } from './bucket/paint-bucket';
 import coordinates from './coordinates/coordinates';
 import { strokeTool } from './stroke/stroke';
 import lightenButton from './lighten/lighten';
+import ditheringButton from './dithering/dithering';
 
 export default function tools() {
   document.body.insertAdjacentElement('beforeend', createElement('div', 'tools'));
   eraserButton();
   bucketButton();
   colorSelect();
-  penButton();
-  setTimeout(coordinates, 0);
   strokeTool();
   lightenButton();
+  ditheringButton();
+  penButton();
+  setTimeout(coordinates, 0);
 }

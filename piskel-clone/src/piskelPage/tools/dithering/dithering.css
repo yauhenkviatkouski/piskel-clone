@@ -1,0 +1,6 @@
+.button_dithering {
+  background-image: url( './tool-dithering.png' );
+  min-width: 35px;
+  width: 45%;
+  order: 5;
+}
