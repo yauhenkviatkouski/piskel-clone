@@ -1,8 +1,43 @@
-import './stroke.css';
-import brezenham from '../common-utils';
+import './rectangle.css';
 import { createElement } from '../../../utilites/common-functions';
 
-export function stroke(mouseEvent) {
+function rectanglePath(startX, startY, finishX, finishY) {
+  const result = [];
+  let x0 = startX;
+  let y0 = startY;
+  const x1 = finishX;
+  const y1 = finishY;
+  if (x0 < x1) {
+    while (x0 <= x1) {
+      result.push([x0, y0]);
+      result.push([x0, y1]);
+      x0 += 1;
+    }
+  } else {
+    while (x1 <= x0) {
+      result.push([x0, y0]);
+      result.push([x0, y1]);
+      x0 -= 1;
+    }
+  }
+  x0 = startX;
+  if (y0 < y1) {
+    while (x0 <= y1) {
+      result.push([x0, y0]);
+      result.push([x1, y0]);
+      y0 += 1;
+    }
+  } else {
+    while (y1 <= y0) {
+      result.push([x0, y0]);
+      result.push([x1, y0]);
+      y0 -= 1;
+    }
+  }
+  return result;
+}
+
+export function rectangle(mouseEvent) {
   const devider = 640 / window.state.canvasSize;
   const canvasTemporary = document.querySelector('.canvas-field__canvasTemporary');
   const ctxTemporary = canvasTemporary.getContext('2d');
@@ -19,7 +54,7 @@ export function stroke(mouseEvent) {
     if (isMouseDown) {
       const finishX = Math.floor(move.offsetX / devider);
       const finishY = Math.floor(move.offsetY / devider);
-      const path = brezenham(startX, startY, finishX, finishY);
+      const path = rectanglePath(startX, startY, finishX, finishY);
       ctxTemporary.clearRect(0, 0, canvasTemporary.width, canvasTemporary.height);
       if (mouseEvent.which === 3) {
         ctxTemporary.fillStyle = window.state.color2;
@@ -40,13 +75,13 @@ export function stroke(mouseEvent) {
   });
 }
 
-export function strokeTool() {
-  const srtokeButton = createElement('button', 'button button_stroke', 'stroke');
-  document.querySelector('.tools').insertAdjacentElement('beforeend', srtokeButton);
-  srtokeButton.addEventListener('click', () => {
+export function rectangleTool() {
+  const rectangleButton = createElement('button', 'button button_rectangle', 'rectangle');
+  document.querySelector('.tools').insertAdjacentElement('beforeend', rectangleButton);
+  rectangleButton.addEventListener('click', () => {
     document.getElementById(`${window.state.handlerId}`).style.border = '';
-    document.querySelector('.button_stroke').style.border = 'white 2px dashed';
-    window.state.handlerMove = stroke;
-    window.state.handlerId = 'stroke';
+    document.querySelector('.button_rectangle').style.border = 'white 2px dashed';
+    window.state.handlerMove = rectangle;
+    window.state.handlerId = 'rectangle';
   });
 }

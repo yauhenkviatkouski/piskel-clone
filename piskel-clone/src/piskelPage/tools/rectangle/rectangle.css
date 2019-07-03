@@ -1,0 +1,6 @@
+.button_rectangle {
+  background-image: url( './tool-rectangle.png' );
+  min-width: 35px;
+  width: 45%;
+  order: 7;
+}
