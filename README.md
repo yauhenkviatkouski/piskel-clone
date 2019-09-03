@@ -16,20 +16,20 @@ ___
 ___
 
 #### ### Task requirements:
-Landing Page
-Usage of Webpack and required project structure
-Custom canvas size (32x32 / 64x64 / 128x128)
-Pen. Required size is 1 unit.
-Color select (Primary/Secondary)
-Paint bucket
-Eraser
-Preview
-Frame management
-Stroke (to draw straight lines)
-Lighten
-Dithering
-colorPicker
-Save user session in localstorage
-Login with one of the oAuth providers from Google / Github / Facebook / VK 
-Own format to file system
-As .gif to file system
+Landing Page  
+Usage of Webpack and required project structure  
+Custom canvas size (32x32 / 64x64 / 128x128)  
+Pen. Required size is 1 unit  
+Color select (Primary/Secondary)  
+Paint bucket  
+Eraser  
+Preview  
+Frame management  
+Stroke (to draw straight lines)  
+Lighten  
+Dithering  
+colorPicker  
+Save user session in localstorage  
+Login with one of the oAuth providers from Google / Github / Facebook / VK   
+Own format to file system   
+As .gif to file system  
