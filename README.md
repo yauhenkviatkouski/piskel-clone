@@ -2,7 +2,7 @@
 This application is made as part of learning at RSSchool
 
 ### Deployed:
-http://yauhenkviatkouski.github.io/piskelAbout
+http://yauhenkviatkouski.github.io/piskelAbout  
 http://yauhenkviatkouski.github.io
 
 ___
